@@ -5,6 +5,7 @@ html5up.net | @ajlkn
 Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 Jekyll integration by Chris Bobbe | chrisbobbe.github.io
 -->
+<link href="/assets/css/syntax.css" rel="stylesheet" >
 <html><head><!-- Robots -->
   <meta name="robots" content="index, follow" /><link rel="canonical" href="http://localhost:4000/" /><!-- Title, description, author --><title>GET YOUR HANDS DIRTY | Gin Blog - awesome blog</title>
   <meta name="description" content="This is the demo site for a Jekyll theme version of HTML5 UP&#39;s sleek, responsive site template Prologue." />
@@ -66,7 +67,9 @@ Jekyll integration by Chris Bobbe | chrisbobbe.github.io
   <div class="container"><header>
 			<h2><a href="http://localhost:4000/2018/05/27/Linux-command-find.html">Linux command find</a></h2><p>Gin | 27 May 2018</p></header><p>  进新公司两个星期了，前两天在处理数据的时候遇到了个问题，公司有个tools team，这帮家伙写的工具文档基本等于没有，
 help信息也很少，实际操作起来只能靠自己摸索。我在使用他们给的一个工具时，发现这个工具生成的文件，文件名必须带有指定前缀，还不能省略！
-cmd -g -a "abc"
+{% highlight bash %}
+cmd -g -a “abc”
+{% endhighlight %}
 
 </p><a href="http://localhost:4000/2018/05/27/Linux-command-find.html">read more</a></div>
 </section>
