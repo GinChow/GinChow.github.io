@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Linux command find
+author: Gin 
 ---
 
 &emsp;&emsp;进新公司两个星期了，前两天在处理数据的时候遇到了个问题，公司有个tools team，这帮家伙写的工具文档基本等于没有，
