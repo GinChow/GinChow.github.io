@@ -47,8 +47,8 @@ Jekyll integration by Chris Bobbe | chrisbobbe.github.io
   </a>
 </div><!-- Nav -->
 <nav id="nav">
-  <ul><li><a href="http://localhost:4000/" id="get-your-hands-dirty-link">
-            <span class="icon fa-link">GET YOUR HANDS DIRTY</span>
+  <ul><li><a href="http://localhost:4000/" id="blog-link">
+            <span class="icon fa-link">blog</span>
           </a></li></ul>
 </nav></div>
   <div class="bottom"><!-- Social Icons -->
@@ -65,13 +65,32 @@ Jekyll integration by Chris Bobbe | chrisbobbe.github.io
 				<p>Gin, 27 May 2018</p>
 			</header><p>  进新公司两个星期了，前两天在处理数据的时候遇到了个问题，公司有个tools team，这帮家伙写的工具文档基本等于没有，
 help信息也很少，实际操作起来只能靠自己摸索。我在使用他们给的一个工具时，发现这个工具生成的文件，文件名必须带有指定前缀，还不能省略！</p>
-
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash">cmd <span class="nt">-g</span> <span class="nt">-a</span> <span class="s2">"abc"</span></code></pre></figure>
-
-<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">foo</span>
-  <span class="nb">puts</span> <span class="s1">'foo'</span>
-<span class="k">end</span>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cmd <span class="nt">-g</span> <span class="nt">-a</span> <span class="s2">"abc"</span> <span class="c">#-a不能省略...</span>
 </code></pre></div></div>
+<!--more-->
+<p>然后，他们提供的另一个工具，则必须指定两个文件夹，每个文件夹中的文件名必须相同才会一一匹配上。你好歹要让加个前缀，好跟上一个工具匹配啊。
+额，这真的是个奇葩的team。Fine，现在要做的就是，把生成文件的多余前缀去掉。看起来是一个挺轻松的活，用python写个脚本分分钟解决。
+<br />  但是!!!
+<br />  身为一个优雅的One-liner Coder怎么能为了做这种简单的事而专门写个脚本呢？这太不优雅了。
+我决定使用Shell命令来做。<br />
+乍看似乎挺简单的，通配符*是我们的好兄弟。</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">ls </span>prefix<span class="k">*</span>.ext | <span class="nb">mv </span>prefix<span class="k">*</span>.ext <span class="k">*</span>.ext <span class="c"># </span>
+</code></pre></div></div>
+<p>这条命令看起来不错， 但实际上shell并不能执行它，因为管道命令并不知道*匹配的是什么东西。<br />
+也许我还是应该写一个shell脚本？</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#!bin/bash</span>
+<span class="k">for </span>file_name <span class="k">in</span> <span class="k">$(</span><span class="nb">ls</span> /dir/prefix<span class="k">*</span>.ext<span class="k">)</span><span class="p">;</span>
+<span class="k">do
+	</span>new_file_name <span class="o">=</span> <span class="s2">"</span><span class="k">${</span><span class="nv">file_name</span><span class="p">##</span><span class="s2">"prefix"</span><span class="k">}</span><span class="s2">"</span>
+	<span class="nb">mv </span>file_name new_file_name
+<span class="k">done</span>
+</code></pre></div></div>
+<p>这里使用了另一个操作符#，作用是从左往右过滤字符串中的子串，单个#是非贪婪模式，##则是贪婪模式，相对的还有一个%操作符，是从右往左过滤字符串子串。
+这算是点字符串操作小技巧。<br />
+好了，现在这个脚本已经能够满足工作需求，但实际上我在运行这个脚本的时候发现异常的慢，文件夹下大概有近两万个文件，这个脚本需要运行近20分钟才能将
+所有的文件名去除前缀。有点不满意啊。。。。<br />
+Google了一下，发现stackoverflow上面有人提过类似的问题，但还是有一点区别，他的要求是在文件夹递归的进行这样的操作，如果照上面这个脚本的思路来写，并不是
+很方便。</p>
 </div>
 	</article>
 </div><!-- Footer -->
