@@ -5,13 +5,26 @@ layout: default
 
 <!-- Main -->
 <div id="main">
+
 	<!-- Post -->
 	<article class="shade-two">
 	  <div class="container">
 			<header>
 				<h2>{{- page.title -}}</h2>
 				<p>{% if page.author %}{{ page.author }}, {% endif %}{{- page.date | date_to_long_string -}}</p>
+				<div class="post-categories">
+			  		{% if post %}
+			    		{% assign categories = post.categories %}
+			  		{% else %}
+			    		{% assign categories = page.categories %}
+			  		{% endif %}
+			  		{% for category in categories %}
+			  			<a href="{{site.baseurl}}/categories/#{{category|slugize}}"><font size="4">{{category}}</font></a>
+			  		{% unless forloop.last %}&nbsp;{% endunless %}
+			  		{% endfor %}
+				</div>
 			</header>
+
 	    {{- content -}}
 	  </div>
 	</article>

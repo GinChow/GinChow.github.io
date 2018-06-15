@@ -4,6 +4,7 @@ title: 谈谈Linux中的～
 author: Gin 
 excerpt_separator: <!--more-->
 tag: Linux, Shell
+categories: [Linux,Tech]
 ---
 
 使用过Linux的同学都熟悉～这个符号，使用它可以快速访问用户根目录

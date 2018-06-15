@@ -3,6 +3,7 @@ layout: post
 title: LSTM的一点理解
 author: Gin 
 excerpt_separator: <!--more-->
+categories: [Deep Learning]
 ---
 
 这个礼拜开始读LSTM相关的论文，一直以来，LSTM是与ResNet shortcut连接齐名的一种解决Gradient Vanishing的方法，事实上有的文章指出
