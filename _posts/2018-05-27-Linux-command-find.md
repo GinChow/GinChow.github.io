@@ -3,7 +3,7 @@ layout: post
 title: Linux command find
 author: Gin 
 excerpt_separator: <!--more-->
-categories: [Linux, Personal]
+categories: [Linux]
 ---
 
 &emsp;&emsp;进新公司两个星期了，前两天在处理数据的时候遇到了个问题，公司有个tools team，这帮家伙写的工具文档基本等于没有，
@@ -37,3 +37,11 @@ done
 所有的文件名去除前缀。有点不满意啊。。。。<br/>
 Google了一下，发现stackoverflow上面有人提过类似的问题，但还是有一点区别，他的要求是在文件夹递归的进行这样的操作，如果照上面这个脚本的思路来写，并不是
 很方便。
+
+一番尝试之后，我发现了一个强大的命令：
+```bash
+find * -name "scco*" -exec zsh -c 'mv $1 ${1#scco}' - '{}' \; 
+```
+在找到满足条件的文件后通过 -exec 指定需要运行命令，后面街上\;表示终止。另一个值得注意的点是，zsh -c 可以运行后面的以字符串形式出现的内容，还可以通过 - 传递参数进去，简直不要太强大！理论上在zsh -c中嵌套使用这种shell 命令可以用一行代码实现任意的命令。
+
+这里我们传入‘{}’表示找到的文件名，shell 命令可以使用$$$1$$在命令中表示第一个参数，$$$2$$表示第二个参数，而$$$0$$则是每个shell命令都有的，表示启动这个脚本的源头，比如这里$$$0$$就是/bin/zsh
