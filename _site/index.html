@@ -16,14 +16,14 @@ Jekyll integration by Chris Bobbe | chrisbobbe.github.io
   </script>
   <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
 <head><!-- Robots -->
-  <meta name="robots" content="index, follow" /><link rel="canonical" href="http://localhost:4000/" /><!-- Title, description, author --><title>Gin Blog - awesome blog</title>
+  <meta name="robots" content="index, follow" /><link rel="canonical" href="http://localhost:4000/" /><!-- Title, description, author --><title>Gin Blog - 漢は泣かない &lt;br/&gt;投げ出す事もない</title>
   <meta name="description" content="This is the demo site for a Jekyll theme version of HTML5 UP&#39;s sleek, responsive site template Prologue." />
   <meta name="author" content="Your Incredible Name" />
   
   <!-- Open Graph -->
-  <meta property="og:title" content="Gin Blog - awesome blog" />
+  <meta property="og:title" content="Gin Blog - 漢は泣かない &lt;br/&gt;投げ出す事もない" />
   <meta property="og:type" content="website" />
-  <meta property="og:image" content="http://localhost:4000/assets/images/avatar.jpg" />
+  <meta property="og:image" content="http://localhost:4000/assets/images/grand_mini.jpg" />
   <meta property="og:url" content="http://localhost:4000/" />
   <meta property="og:site_name" content="Gin Blog" />
   <meta property="og:description" content="This is the demo site for a Jekyll theme version of HTML5 UP&#39;s sleek, responsive site template Prologue." />
@@ -50,9 +50,9 @@ Jekyll integration by Chris Bobbe | chrisbobbe.github.io
   <div class="top"><!-- Logo -->
 <div id="logo">
   <a href="http://localhost:4000/" id="home-link">
-    <span class="image avatar48"><img src="/assets/images/avatar.jpg" /></span>
+    <span class="logo"><img src="/assets/images/grand_mini.jpg" /></span>
     <h1 id="title">Gin Blog</h1>
-    <p>awesome blog</p>
+    <p>漢は泣かない <br/>投げ出す事もない</p>
   </a>
 </div><!-- Nav -->
 <nav id="nav">
@@ -60,7 +60,7 @@ Jekyll integration by Chris Bobbe | chrisbobbe.github.io
             <span class="icon fa-link">Categories</span>
           </a></li><li><a href="#" id="blog" class="active">
             <span class="icon fa-link">blog</span>
-          </a></li><hr><li><a href="#调参黑魔法" id="调参黑魔法-link" class="scrolly"><span class="icon fa-file">调参黑魔法</span></a></li><li><a href="#地铁众生相-1" id="地铁众生相-1-link" class="scrolly"><span class="icon fa-file">地铁众生相(1)</span></a></li><li><a href="#谈谈linux中的" id="谈谈linux中的-link" class="scrolly"><span class="icon fa-file">谈谈Linux中的～</span></a></li><li><a href="#lstm的一点理解" id="lstm的一点理解-link" class="scrolly"><span class="icon fa-file">LSTM的一点理解</span></a></li><li><a href="#linux-command-find" id="linux-command-find-link" class="scrolly"><span class="icon fa-file">Linux command find</span></a></li><li><a href="#my-first-post" id="my-first-post-link" class="scrolly"><span class="icon fa-file">my first post</span></a></li></ul>
+          </a></li><hr><li><a href="#浮点运算的magic" id="浮点运算的magic-link" class="scrolly"><span class="icon fa-file">浮点运算的Magic</span></a></li><li><a href="#derive-lstm" id="derive-lstm-link" class="scrolly"><span class="icon fa-file">Derive LSTM</span></a></li><li><a href="#记一个生命的离去" id="记一个生命的离去-link" class="scrolly"><span class="icon fa-file">记一个生命的离去</span></a></li><li><a href="#awesome-bits" id="awesome-bits-link" class="scrolly"><span class="icon fa-file">awesome-bits</span></a></li><li><a href="#调参黑魔法" id="调参黑魔法-link" class="scrolly"><span class="icon fa-file">调参黑魔法</span></a></li><li><a href="#地铁众生相-1" id="地铁众生相-1-link" class="scrolly"><span class="icon fa-file">地铁众生相(1)</span></a></li><li><a href="#谈谈linux中的" id="谈谈linux中的-link" class="scrolly"><span class="icon fa-file">谈谈Linux中的～</span></a></li><li><a href="#lstm的一点理解" id="lstm的一点理解-link" class="scrolly"><span class="icon fa-file">LSTM的一点理解</span></a></li><li><a href="#linux-command-find" id="linux-command-find-link" class="scrolly"><span class="icon fa-file">Linux command find</span></a></li><li><a href="#my-first-post" id="my-first-post-link" class="scrolly"><span class="icon fa-file">my first post</span></a></li></ul>
 </nav></div>
   <div class="bottom"><!-- Social Icons -->
 <ul class="icons"><li><a href="mailto:jogincoco@gmail.com" class="icon fa-envelope"><span class="label">Email</span></a></li></ul>
@@ -74,7 +74,29 @@ Jekyll integration by Chris Bobbe | chrisbobbe.github.io
 
 </div>
 </section>
-<!-- Posts List --><section id="调参黑魔法" class="shade-three">
+<!-- Posts List --><section id="浮点运算的magic" class="shade-three">
+  <div class="container"><header>
+			<h2><a href="http://localhost:4000/tech/2018/07/04/Magic-number-in-float-operation.html">浮点运算的Magic</a></h2><p>Gin | 04 July 2018</p></header><p>The algorithm accepts a 32-bit floating-point number as the input and stores a halved value for later use. Then, treating the bits representing the floating-point number as a 32-bit integer, a logical shift right by one bit is performed and the result subtracted from the magic number 0x5F3759DF. This is the first approximation of the inverse square root of the input. Treating the bits again as a floating-point number, it runs one iteration of Newton’s method, yielding a more precise approximation. It is not known how the constant was originally derived, though investigation has shed some light on possible methods....</p><a href="http://localhost:4000/tech/2018/07/04/Magic-number-in-float-operation.html">read more</a></div>
+</section>
+<section id="derive-lstm" class="shade-four">
+  <div class="container"><header>
+			<h2><a href="http://localhost:4000/deep%20learning/tech/2018/06/26/Derive-LSTM.html">Derive LSTM</a></h2><p>Gin | 26 June 2018</p></header><p>参考文献 We could also do something more interesting: we can let the RNN decide when its ready to move on to the next input, and even what that input should be. This is similar to how a human might focus on certain words or phrases for an extended period of time to translate them or might double back through the source. To do this, we use the RNN’s output (an external action) to determine its next input dynamically. For example, we might have the RNN output actions like “read the last input again”, “backtrack 5 timesteps of input”, etc. Successful...</p><a href="http://localhost:4000/deep%20learning/tech/2018/06/26/Derive-LSTM.html">read more</a></div>
+</section>
+<section id="记一个生命的离去" class="shade-three">
+  <div class="container"><header>
+			<h2><a href="http://localhost:4000/personal/2018/06/23/condolence-for-a-life.html">记一个生命的离去</a></h2><p>Gin | 23 June 2018</p></header><p>嘟噜酱向来都很善良，这是她的优点，也是她的缺点。
+
+昨晚我们看完电影回来的路上已经十二点多了，雨下了一整天，还是淅淅沥沥的。我们还好车往家里走，路过十字路口的饭店时，嘟噜酱看见路边的草丛里有一只小猫，它正哑着嗓子叫着，一边还吃力的往草丛深入挪动身体，企图少淋一些雨。
+
+嘟噜酱看了我一眼就小跑过去把它抱了起来，“这只小猫跟我们有缘呢，带回去吧。”
+
+</p><a href="http://localhost:4000/personal/2018/06/23/condolence-for-a-life.html">read more</a></div>
+</section>
+<section id="awesome-bits" class="shade-two">
+  <div class="container"><header>
+			<h2><a href="http://localhost:4000/tech/2018/06/21/awesome-bits.html">awesome-bits</a></h2><p>Gin | 21 June 2018</p></header><p>Original Reference Link awesome-bits A curated list of awesome bitwise operations and tricks Maintainer - Keon Kim Please feel free to pull requests Integers x | (1&lt;&lt;n) x &amp; ~(1&lt;&lt;n) x ^ (1&lt;&lt;n) Round up to the next power of two unsigned int v; //only works if v is 32 bit v--; v |= v &gt;&gt; 1; v |= v &gt;&gt; 2; v |= v &gt;&gt; 4; v |= v &gt;&gt; 8; v |= v &gt;&gt; 16; v++; Get the maximum integer int maxInt = ~(1 &lt;&lt; 31); int maxInt = (1 &lt;&lt; 31) - 1; int maxInt = (1...</p><a href="http://localhost:4000/tech/2018/06/21/awesome-bits.html">read more</a></div>
+</section>
+<section id="调参黑魔法" class="shade-three">
   <div class="container"><header>
 			<h2><a href="http://localhost:4000/deep%20learning/tech/2018/06/21/Black-magic-on-hyperparameter-tuning.html">调参黑魔法</a></h2><p>Gin | 21 June 2018</p></header><p>Learning Rate
 
