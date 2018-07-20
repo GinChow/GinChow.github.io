@@ -61,7 +61,7 @@ Jekyll integration by Chris Bobbe | chrisbobbe.github.io
             <span class="icon fa-link">Categories</span>
           </a></li><li><a href="#" id="blog" class="active">
             <span class="icon fa-link">blog</span>
-          </a></li><hr><li><a href="#浮点运算的magic" id="浮点运算的magic-link" class="scrolly"><span class="icon fa-file">浮点运算的Magic</span></a></li><li><a href="#derive-lstm" id="derive-lstm-link" class="scrolly"><span class="icon fa-file">Derive LSTM</span></a></li><li><a href="#记一个生命的离去" id="记一个生命的离去-link" class="scrolly"><span class="icon fa-file">记一个生命的离去</span></a></li><li><a href="#awesome-bits" id="awesome-bits-link" class="scrolly"><span class="icon fa-file">awesome-bits</span></a></li><li><a href="#调参黑魔法" id="调参黑魔法-link" class="scrolly"><span class="icon fa-file">调参黑魔法</span></a></li><li><a href="#地铁众生相-1" id="地铁众生相-1-link" class="scrolly"><span class="icon fa-file">地铁众生相(1)</span></a></li><li><a href="#谈谈linux中的" id="谈谈linux中的-link" class="scrolly"><span class="icon fa-file">谈谈Linux中的～</span></a></li><li><a href="#lstm的一点理解" id="lstm的一点理解-link" class="scrolly"><span class="icon fa-file">LSTM的一点理解</span></a></li><li><a href="#linux-command-find" id="linux-command-find-link" class="scrolly"><span class="icon fa-file">Linux command find</span></a></li><li><a href="#my-first-post" id="my-first-post-link" class="scrolly"><span class="icon fa-file">my first post</span></a></li></ul>
+          </a></li><hr><li><a href="#python中的浮点数" id="python中的浮点数-link" class="scrolly"><span class="icon fa-file">Python中的浮点数</span></a></li><li><a href="#shell中的位运算" id="shell中的位运算-link" class="scrolly"><span class="icon fa-file">Shell中的位运算</span></a></li><li><a href="#浮点运算的magic" id="浮点运算的magic-link" class="scrolly"><span class="icon fa-file">浮点运算的Magic</span></a></li><li><a href="#derive-lstm" id="derive-lstm-link" class="scrolly"><span class="icon fa-file">Derive LSTM</span></a></li><li><a href="#记一个生命的离去" id="记一个生命的离去-link" class="scrolly"><span class="icon fa-file">记一个生命的离去</span></a></li><li><a href="#awesome-bits" id="awesome-bits-link" class="scrolly"><span class="icon fa-file">awesome-bits</span></a></li><li><a href="#调参黑魔法" id="调参黑魔法-link" class="scrolly"><span class="icon fa-file">调参黑魔法</span></a></li><li><a href="#地铁众生相-1" id="地铁众生相-1-link" class="scrolly"><span class="icon fa-file">地铁众生相(1)</span></a></li><li><a href="#谈谈linux中的" id="谈谈linux中的-link" class="scrolly"><span class="icon fa-file">谈谈Linux中的～</span></a></li><li><a href="#lstm的一点理解" id="lstm的一点理解-link" class="scrolly"><span class="icon fa-file">LSTM的一点理解</span></a></li><li><a href="#linux-command-find" id="linux-command-find-link" class="scrolly"><span class="icon fa-file">Linux command find</span></a></li><li><a href="#my-first-post" id="my-first-post-link" class="scrolly"><span class="icon fa-file">my first post</span></a></li></ul>
 </nav></div>
   <div class="bottom"><!-- Social Icons -->
 <ul class="icons"><li><a href="mailto:jogincoco@gmail.com" class="icon fa-envelope"><span class="label">Email</span></a></li></ul>
@@ -75,11 +75,35 @@ Jekyll integration by Chris Bobbe | chrisbobbe.github.io
 
 </div>
 </section>
-<!-- Posts List --><section id="浮点运算的magic" class="shade-three">
+<!-- Posts List --><section id="python中的浮点数" class="shade-three">
+  <div class="container"><header>
+			<h2><a href="http://localhost:4000/python/tech/2018/07/20/something-about-float.html">Python中的浮点数</a></h2><p>Gin | 20 July 2018</p></header><p>最近遇到python中的float64转float32精度失真的问题，
+
+比如：
+
+&gt;&gt;&gt; f1 = np.float64(3.13415126453231423)
+&gt;&gt;&gt; f1
+3.1341512645323144
+&gt;&gt;&gt; f2 = f1.astype(np.float32)
+&gt;&gt;&gt; f2
+3.1341512
+
+
+可以看到float64转换成float32并没有遵循我们常规的四舍五入法则, 2后面的6没有进位，这是为什么呢？
+
+</p><a href="http://localhost:4000/python/tech/2018/07/20/something-about-float.html">read more</a></div>
+</section>
+<section id="shell中的位运算" class="shade-four">
+  <div class="container"><header>
+			<h2><a href="http://localhost:4000/tech/shell/2018/07/10/bit-operation-in-shell.html">Shell中的位运算</a></h2><p>Gin | 10 July 2018</p></header><p>Shell中的位运算，有特殊的使用方式
+
+</p><a href="http://localhost:4000/tech/shell/2018/07/10/bit-operation-in-shell.html">read more</a></div>
+</section>
+<section id="浮点运算的magic" class="shade-three">
   <div class="container"><header>
 			<h2><a href="http://localhost:4000/tech/2018/07/04/Magic-number-in-float-operation.html">浮点运算的Magic</a></h2><p>Gin | 04 July 2018</p></header><p>The algorithm accepts a 32-bit floating-point number as the input and stores a halved value for later use. Then, treating the bits representing the floating-point number as a 32-bit integer, a logical shift right by one bit is performed and the result subtracted from the magic number 0x5F3759DF. This is the first approximation of the inverse square root of the input. Treating the bits again as a floating-point number, it runs one iteration of Newton’s method, yielding a more precise approximation. It is not known how the constant was originally derived, though investigation has shed some light on possible methods....</p><a href="http://localhost:4000/tech/2018/07/04/Magic-number-in-float-operation.html">read more</a></div>
 </section>
-<section id="derive-lstm" class="shade-four">
+<section id="derive-lstm" class="shade-two">
   <div class="container"><header>
 			<h2><a href="http://localhost:4000/deep%20learning/tech/2018/06/26/Derive-LSTM.html">Derive LSTM</a></h2><p>Gin | 26 June 2018</p></header><p>参考文献 We could also do something more interesting: we can let the RNN decide when its ready to move on to the next input, and even what that input should be. This is similar to how a human might focus on certain words or phrases for an extended period of time to translate them or might double back through the source. To do this, we use the RNN’s output (an external action) to determine its next input dynamically. For example, we might have the RNN output actions like “read the last input again”, “backtrack 5 timesteps of input”, etc. Successful...</p><a href="http://localhost:4000/deep%20learning/tech/2018/06/26/Derive-LSTM.html">read more</a></div>
 </section>
@@ -93,7 +117,7 @@ Jekyll integration by Chris Bobbe | chrisbobbe.github.io
 
 </p><a href="http://localhost:4000/personal/2018/06/23/condolence-for-a-life.html">read more</a></div>
 </section>
-<section id="awesome-bits" class="shade-two">
+<section id="awesome-bits" class="shade-four">
   <div class="container"><header>
 			<h2><a href="http://localhost:4000/tech/2018/06/21/awesome-bits.html">awesome-bits</a></h2><p>Gin | 21 June 2018</p></header><p>Original Reference Link awesome-bits A curated list of awesome bitwise operations and tricks Maintainer - Keon Kim Please feel free to pull requests Integers x | (1&lt;&lt;n) x &amp; ~(1&lt;&lt;n) x ^ (1&lt;&lt;n) Round up to the next power of two unsigned int v; //only works if v is 32 bit v--; v |= v &gt;&gt; 1; v |= v &gt;&gt; 2; v |= v &gt;&gt; 4; v |= v &gt;&gt; 8; v |= v &gt;&gt; 16; v++; Get the maximum integer int maxInt = ~(1 &lt;&lt; 31); int maxInt = (1 &lt;&lt; 31) - 1; int maxInt = (1...</p><a href="http://localhost:4000/tech/2018/06/21/awesome-bits.html">read more</a></div>
 </section>
@@ -115,7 +139,7 @@ lr range最小值的确定就比较随意，通常是选择小于最大值3，4�
 
 </p><a href="http://localhost:4000/deep%20learning/tech/2018/06/21/Black-magic-on-hyperparameter-tuning.html">read more</a></div>
 </section>
-<section id="地铁众生相-1" class="shade-four">
+<section id="地铁众生相-1" class="shade-two">
   <div class="container"><header>
 			<h2><a href="http://localhost:4000/society%20observation/2018/06/15/Metro-Thinking.html">地铁众生相(1)</a></h2><p>Gin | 15 June 2018</p></header><p>
 </p><a href="http://localhost:4000/society%20observation/2018/06/15/Metro-Thinking.html">read more</a></div>
@@ -149,7 +173,7 @@ output: /Users/Gin
 
 </p><a href="http://localhost:4000/linux/tech/2018/06/13/something-about-~-in-Linux.html">read more</a></div>
 </section>
-<section id="lstm的一点理解" class="shade-two">
+<section id="lstm的一点理解" class="shade-four">
   <div class="container"><header>
 			<h2><a href="http://localhost:4000/deep%20learning/2018/05/31/some-understanding-about-LSTM.html">LSTM的一点理解</a></h2><p>Gin | 31 May 2018</p></header><p>这个礼拜开始读LSTM相关的论文，一直以来，LSTM是与ResNet shortcut连接齐名的一种解决Gradient Vanishing的方法，事实上有的文章指出
 LSTM中cell state之间的连接，就是某种程度上的short cut，即通过加法门将top层的gradient向bottom层传递，这听上去十分合理。但是ResNet
@@ -165,7 +189,7 @@ cmd -g -a "abc" #-a不能省略...
 
 </p><a href="http://localhost:4000/linux/2018/05/27/Linux-command-find.html">read more</a></div>
 </section>
-<section id="my-first-post" class="shade-four">
+<section id="my-first-post" class="shade-two">
   <div class="container"><header>
 			<h2><a href="http://localhost:4000/personal/2018/05/01/first-post.html">my first post</a></h2><p>01 May 2018</p></header><p>First test blog
 Click the link below to go back to index:
