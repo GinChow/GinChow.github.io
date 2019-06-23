@@ -1,0 +1,5 @@
+>> **Mature engineers understand the non-technical areas of how they are perceived.**
+
+>> Being able to write a Bloom Filter in Erlang, or write multi-threaded C in your sleep is insufficient. None of that matters if no one wants to work with you. Mature engineers know that no matter how complete, elegant, or superior their designs are, it won’t matter if no one wants to work alongside them because they are assholes. Condescension, belittling, narcissism, and ego-boosting behavior send the message to other engineers (maybe tacitly) to stay away. Part of being happy in engineering comes from enjoying the company of the people you work with while designing and building things. An engineer who is quick to call someone a moron is someone destined to stunt his or her career.
+
+That's god dammn completely right.
