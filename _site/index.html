@@ -63,7 +63,7 @@ Jekyll integration by Chris Bobbe | chrisbobbe.github.io
             <span class="icon fa-link">Categories</span>
           </a></li><li><a href="#" id="blog" class="active">
             <span class="icon fa-link">blog</span>
-          </a></li><hr><li><a href="#python中的浮点数" id="python中的浮点数-link" class="scrolly"><span class="icon fa-file">Python中的浮点数</span></a></li><li><a href="#shell中的位运算" id="shell中的位运算-link" class="scrolly"><span class="icon fa-file">Shell中的位运算</span></a></li><li><a href="#浮点运算的magic" id="浮点运算的magic-link" class="scrolly"><span class="icon fa-file">浮点运算的Magic</span></a></li><li><a href="#derive-lstm" id="derive-lstm-link" class="scrolly"><span class="icon fa-file">Derive LSTM</span></a></li><li><a href="#记一个生命的离去" id="记一个生命的离去-link" class="scrolly"><span class="icon fa-file">记一个生命的离去</span></a></li><li><a href="#awesome-bits" id="awesome-bits-link" class="scrolly"><span class="icon fa-file">awesome-bits</span></a></li><li><a href="#调参黑魔法" id="调参黑魔法-link" class="scrolly"><span class="icon fa-file">调参黑魔法</span></a></li><li><a href="#地铁众生相-1" id="地铁众生相-1-link" class="scrolly"><span class="icon fa-file">地铁众生相(1)</span></a></li><li><a href="#谈谈linux中的" id="谈谈linux中的-link" class="scrolly"><span class="icon fa-file">谈谈Linux中的～</span></a></li><li><a href="#lstm的一点理解" id="lstm的一点理解-link" class="scrolly"><span class="icon fa-file">LSTM的一点理解</span></a></li><li><a href="#linux-command-find" id="linux-command-find-link" class="scrolly"><span class="icon fa-file">Linux command find</span></a></li><li><a href="#my-first-post" id="my-first-post-link" class="scrolly"><span class="icon fa-file">my first post</span></a></li></ul>
+          </a></li><hr><li><a href="#go-through-attention-mechanism" id="go-through-attention-mechanism-link" class="scrolly"><span class="icon fa-file">Go through Attention mechanism</span></a></li><li><a href="#关于现阶段生活的一些思考" id="关于现阶段生活的一些思考-link" class="scrolly"><span class="icon fa-file">关于现阶段生活的一些思考</span></a></li><li><a href="#tensorflow多线程训练的问题" id="tensorflow多线程训练的问题-link" class="scrolly"><span class="icon fa-file">tensorflow多线程训练的问题</span></a></li><li><a href="#python中的浮点数" id="python中的浮点数-link" class="scrolly"><span class="icon fa-file">Python中的浮点数</span></a></li><li><a href="#shell中的位运算" id="shell中的位运算-link" class="scrolly"><span class="icon fa-file">Shell中的位运算</span></a></li><li><a href="#浮点运算的magic" id="浮点运算的magic-link" class="scrolly"><span class="icon fa-file">浮点运算的Magic</span></a></li><li><a href="#derive-lstm" id="derive-lstm-link" class="scrolly"><span class="icon fa-file">Derive LSTM</span></a></li><li><a href="#记一个生命的离去" id="记一个生命的离去-link" class="scrolly"><span class="icon fa-file">记一个生命的离去</span></a></li><li><a href="#调参黑魔法" id="调参黑魔法-link" class="scrolly"><span class="icon fa-file">调参黑魔法</span></a></li><li><a href="#awesome-bits" id="awesome-bits-link" class="scrolly"><span class="icon fa-file">awesome-bits</span></a></li><li><a href="#地铁众生相-1" id="地铁众生相-1-link" class="scrolly"><span class="icon fa-file">地铁众生相(1)</span></a></li><li><a href="#谈谈linux中的" id="谈谈linux中的-link" class="scrolly"><span class="icon fa-file">谈谈Linux中的～</span></a></li><li><a href="#lstm的一点理解" id="lstm的一点理解-link" class="scrolly"><span class="icon fa-file">LSTM的一点理解</span></a></li><li><a href="#linux-command-find" id="linux-command-find-link" class="scrolly"><span class="icon fa-file">Linux command find</span></a></li><li><a href="#my-first-post" id="my-first-post-link" class="scrolly"><span class="icon fa-file">my first post</span></a></li></ul>
 </nav></div>
   <div class="bottom"><!-- Social Icons -->
 <ul class="icons"><li><a href="mailto:jogincoco@gmail.com" class="icon fa-envelope"><span class="label">Email</span></a></li></ul>
@@ -77,7 +77,25 @@ Jekyll integration by Chris Bobbe | chrisbobbe.github.io
 
 </div>
 </section>
-<!-- Posts List --><section id="python中的浮点数" class="shade-three">
+<!-- Posts List --><section id="go-through-attention-mechanism" class="shade-three">
+  <div class="container"><header>
+			<h2><a href="http://localhost:4000/deep%20learning/tech/2019/08/04/Go-through-Attention-mechanism.html">Go through Attention mechanism</a></h2><p>Gin | 04 August 2019</p></header><p>最近的工作内容跟Attention机制紧密结合，感觉有必要仔细梳理一下这块内容 Origin Bahdanau attention 最先使用attention的一篇文章是Neural machine translation by jointly learning to align and translate 其基本结构是在原encoder-decoder-model的基础上, 增加了动态数量的encoder-embedding，让模型的表达能力更强了 In the Encoder–Decoder framework, an encoder reads the input sentence, a sequence of vectors x=(x1,···,xTx),in to avectorc.2 The most commonapproach is to use an RNN such that 这里的f就是encoder，原文中使用的是bi-RNN结构, q是Attention，C是encoder-embedding经过Attention之后当前timestep的Context Vector, g是Decoder，一般而言也是一个RNN结构后面再接一些postNet， 是第i个timestep，Decoder中RNN的hidden, 是第i个timestep的输出，这里的$s_{i}$也是当前timestep得到的, RNN输入的是$s_{i-1}, y_{i-1}, c_{i}$, 输出是$s_{i}$, Decoder的输出是$y_{i}$ 计算第i个timestep的context vector 表示第i个timestep，context vector与第j个encoder embedding的相关程度 其中 表示初步计算的相关程度, 在这之后过一层softmax得到 这里的是alignment model，论文中使用的是feedforward network，在后来的应用中，甚至可以直接简化为与的点积 Content-based attention Tacotron的原始论文使用了这种Attention机制，首次提出这种机制的是这篇文章Grammar as a foreign Language 他在Bahdanua Attention的基础上做了点“细微的工作” 个人觉得改动非常小，但是不知道为什么Tacotron会采用这种形式的Attention An important extension of the sequence-to-sequence model is by adding an attention mechanism. We adapted the attention model from [2] which, to produce each output...</p><a href="http://localhost:4000/deep%20learning/tech/2019/08/04/Go-through-Attention-mechanism.html">read more</a></div>
+</section>
+<section id="关于现阶段生活的一些思考" class="shade-four">
+  <div class="container"><header>
+			<h2><a href="http://localhost:4000/society%20observation/2019/06/23/Rethink-myself.html">关于现阶段生活的一些思考</a></h2><p>Gin | 23 June 2019</p></header><p>偶然间在B站上，看到一个汪海林评论当今影视圈的视频。
+
+汪海林的演讲
+
+这段演讲中，汪海林先生说了这么一句话
+
+</p><a href="http://localhost:4000/society%20observation/2019/06/23/Rethink-myself.html">read more</a></div>
+</section>
+<section id="tensorflow多线程训练的问题" class="shade-three">
+  <div class="container"><header>
+			<h2><a href="http://localhost:4000/python/tech/tensorflow/2018/09/11/MultiThreading-training.html">tensorflow多线程训练的问题</a></h2><p>Gin | 11 September 2018</p></header><p>在构建多线程队列训练机构时，发现多线程访问同一个generator时会引发generator already executing的exception，问题在于同一个generator在被多个线程访问的时候会发生冲突，所以需要使用threading lock来保证代码的线程安全性。 Code sample1 import threading class threadsafe_generator: """Takes an generator and makes it thread-safe by serializing call to the `next` method of given generator. """ def __init__(self, gen): self.gen = gen self.lock = threading.Lock() def __iter__(self): return self.next() def next(self): with self.lock: return self.gen.next() # 定义我们的生成器 def all_keywords(): for row in csv.reader(open('companies.csv')): if row[0]: yield row[0] # 将其转换为线程安全的 keywords = threadsafe_generator(all_keywords()) # 然后在线程中就可以随意地使用keywords.next()而不必担心"generator already executing"异常了。 My code # old version def _load_file_generator(self, fn_lists): for fn_in, fn_out, fn_len in fn_lists: data_in = np.load(os.path.join(self._input_src_dir,fn_in)) data_out = np.load(os.path.join(self._out_src_dir, fn_out)) data_len = np.load(os.path.join(self._len_src_dir, fn_len)) yield data_in, data_out, data_len # new version...</p><a href="http://localhost:4000/python/tech/tensorflow/2018/09/11/MultiThreading-training.html">read more</a></div>
+</section>
+<section id="python中的浮点数" class="shade-two">
   <div class="container"><header>
 			<h2><a href="http://localhost:4000/python/tech/2018/07/20/something-about-float.html">Python中的浮点数</a></h2><p>Gin | 20 July 2018</p></header><p>最近遇到python中的float64转float32精度失真的问题，
 
@@ -95,21 +113,21 @@ Jekyll integration by Chris Bobbe | chrisbobbe.github.io
 
 </p><a href="http://localhost:4000/python/tech/2018/07/20/something-about-float.html">read more</a></div>
 </section>
-<section id="shell中的位运算" class="shade-four">
+<section id="shell中的位运算" class="shade-three">
   <div class="container"><header>
 			<h2><a href="http://localhost:4000/tech/shell/2018/07/10/bit-operation-in-shell.html">Shell中的位运算</a></h2><p>Gin | 10 July 2018</p></header><p>Shell中的位运算，有特殊的使用方式
 
 </p><a href="http://localhost:4000/tech/shell/2018/07/10/bit-operation-in-shell.html">read more</a></div>
 </section>
-<section id="浮点运算的magic" class="shade-three">
+<section id="浮点运算的magic" class="shade-four">
   <div class="container"><header>
 			<h2><a href="http://localhost:4000/tech/2018/07/04/Magic-number-in-float-operation.html">浮点运算的Magic</a></h2><p>Gin | 04 July 2018</p></header><p>The algorithm accepts a 32-bit floating-point number as the input and stores a halved value for later use. Then, treating the bits representing the floating-point number as a 32-bit integer, a logical shift right by one bit is performed and the result subtracted from the magic number 0x5F3759DF. This is the first approximation of the inverse square root of the input. Treating the bits again as a floating-point number, it runs one iteration of Newton’s method, yielding a more precise approximation. It is not known how the constant was originally derived, though investigation has shed some light on possible methods....</p><a href="http://localhost:4000/tech/2018/07/04/Magic-number-in-float-operation.html">read more</a></div>
 </section>
-<section id="derive-lstm" class="shade-two">
+<section id="derive-lstm" class="shade-three">
   <div class="container"><header>
 			<h2><a href="http://localhost:4000/deep%20learning/tech/2018/06/26/Derive-LSTM.html">Derive LSTM</a></h2><p>Gin | 26 June 2018</p></header><p>参考文献 We could also do something more interesting: we can let the RNN decide when its ready to move on to the next input, and even what that input should be. This is similar to how a human might focus on certain words or phrases for an extended period of time to translate them or might double back through the source. To do this, we use the RNN’s output (an external action) to determine its next input dynamically. For example, we might have the RNN output actions like “read the last input again”, “backtrack 5 timesteps of input”, etc. Successful...</p><a href="http://localhost:4000/deep%20learning/tech/2018/06/26/Derive-LSTM.html">read more</a></div>
 </section>
-<section id="记一个生命的离去" class="shade-three">
+<section id="记一个生命的离去" class="shade-two">
   <div class="container"><header>
 			<h2><a href="http://localhost:4000/personal/2018/06/23/condolence-for-a-life.html">记一个生命的离去</a></h2><p>Gin | 23 June 2018</p></header><p>嘟噜酱向来都很善良，这是她的优点，也是她的缺点。
 
@@ -118,10 +136,6 @@ Jekyll integration by Chris Bobbe | chrisbobbe.github.io
 嘟噜酱看了我一眼就小跑过去把它抱了起来，“这只小猫跟我们有缘呢，带回去吧。”
 
 </p><a href="http://localhost:4000/personal/2018/06/23/condolence-for-a-life.html">read more</a></div>
-</section>
-<section id="awesome-bits" class="shade-four">
-  <div class="container"><header>
-			<h2><a href="http://localhost:4000/tech/2018/06/21/awesome-bits.html">awesome-bits</a></h2><p>Gin | 21 June 2018</p></header><p>Original Reference Link awesome-bits A curated list of awesome bitwise operations and tricks Maintainer - Keon Kim Please feel free to pull requests Integers x | (1&lt;&lt;n) x &amp; ~(1&lt;&lt;n) x ^ (1&lt;&lt;n) Round up to the next power of two unsigned int v; //only works if v is 32 bit v--; v |= v &gt;&gt; 1; v |= v &gt;&gt; 2; v |= v &gt;&gt; 4; v |= v &gt;&gt; 8; v |= v &gt;&gt; 16; v++; Get the maximum integer int maxInt = ~(1 &lt;&lt; 31); int maxInt = (1 &lt;&lt; 31) - 1; int maxInt = (1...</p><a href="http://localhost:4000/tech/2018/06/21/awesome-bits.html">read more</a></div>
 </section>
 <section id="调参黑魔法" class="shade-three">
   <div class="container"><header>
@@ -141,12 +155,16 @@ lr range最小值的确定就比较随意，通常是选择小于最大值3，4�
 
 </p><a href="http://localhost:4000/deep%20learning/tech/2018/06/21/Black-magic-on-hyperparameter-tuning.html">read more</a></div>
 </section>
-<section id="地铁众生相-1" class="shade-two">
+<section id="awesome-bits" class="shade-four">
+  <div class="container"><header>
+			<h2><a href="http://localhost:4000/tech/2018/06/21/awesome-bits.html">awesome-bits</a></h2><p>Gin | 21 June 2018</p></header><p>Original Reference Link awesome-bits A curated list of awesome bitwise operations and tricks Maintainer - Keon Kim Please feel free to pull requests Integers x | (1&lt;&lt;n) x &amp; ~(1&lt;&lt;n) x ^ (1&lt;&lt;n) Round up to the next power of two unsigned int v; //only works if v is 32 bit v--; v |= v &gt;&gt; 1; v |= v &gt;&gt; 2; v |= v &gt;&gt; 4; v |= v &gt;&gt; 8; v |= v &gt;&gt; 16; v++; Get the maximum integer int maxInt = ~(1 &lt;&lt; 31); int maxInt = (1 &lt;&lt; 31) - 1; int maxInt = (1...</p><a href="http://localhost:4000/tech/2018/06/21/awesome-bits.html">read more</a></div>
+</section>
+<section id="地铁众生相-1" class="shade-three">
   <div class="container"><header>
 			<h2><a href="http://localhost:4000/society%20observation/2018/06/15/Metro-Thinking.html">地铁众生相(1)</a></h2><p>Gin | 15 June 2018</p></header><p>
 </p><a href="http://localhost:4000/society%20observation/2018/06/15/Metro-Thinking.html">read more</a></div>
 </section>
-<section id="谈谈linux中的" class="shade-three">
+<section id="谈谈linux中的" class="shade-two">
   <div class="container"><header>
 			<h2><a href="http://localhost:4000/linux/tech/2018/06/13/something-about-~-in-Linux.html">谈谈Linux中的～</a></h2><p>Gin | 13 June 2018</p></header><p>使用过Linux的同学都熟悉～这个符号，使用它可以快速访问用户根目录
 cd ~ # 打开用户根目录
@@ -163,26 +181,27 @@ echo $HOME
 output: /Users/Gin
 
 貌似没有区别，但是再试试这个
-{% highlight bash %}
-echo “~”
+
+
+  echo "~"
 output: ~
 
-echo “$HOME”
+echo "$HOME"
 output: /Users/Gin
-{% endhighlight %}
+
 
 开始不一样了
 
 </p><a href="http://localhost:4000/linux/tech/2018/06/13/something-about-~-in-Linux.html">read more</a></div>
 </section>
-<section id="lstm的一点理解" class="shade-four">
+<section id="lstm的一点理解" class="shade-three">
   <div class="container"><header>
 			<h2><a href="http://localhost:4000/deep%20learning/2018/05/31/some-understanding-about-LSTM.html">LSTM的一点理解</a></h2><p>Gin | 31 May 2018</p></header><p>这个礼拜开始读LSTM相关的论文，一直以来，LSTM是与ResNet shortcut连接齐名的一种解决Gradient Vanishing的方法，事实上有的文章指出
 LSTM中cell state之间的连接，就是某种程度上的short cut，即通过加法门将top层的gradient向bottom层传递，这听上去十分合理。但是ResNet
 的short cut连接
 </p><a href="http://localhost:4000/deep%20learning/2018/05/31/some-understanding-about-LSTM.html">read more</a></div>
 </section>
-<section id="linux-command-find" class="shade-three">
+<section id="linux-command-find" class="shade-four">
   <div class="container"><header>
 			<h2><a href="http://localhost:4000/linux/2018/05/27/Linux-command-find.html">Linux command find</a></h2><p>Gin | 27 May 2018</p></header><p>  进新公司两个星期了，前两天在处理数据的时候遇到了个问题，公司有个tools team，这帮家伙写的工具文档基本等于没有，
 help信息也很少，实际操作起来只能靠自己摸索。我在使用他们给的一个工具时，发现这个工具生成的文件，文件名必须带有指定前缀，还不能省略！
@@ -191,7 +210,7 @@ cmd -g -a "abc" #-a不能省略...
 
 </p><a href="http://localhost:4000/linux/2018/05/27/Linux-command-find.html">read more</a></div>
 </section>
-<section id="my-first-post" class="shade-two">
+<section id="my-first-post" class="shade-three">
   <div class="container"><header>
 			<h2><a href="http://localhost:4000/personal/2018/05/01/first-post.html">my first post</a></h2><p>01 May 2018</p></header><p>First test blog
 Click the link below to go back to index:

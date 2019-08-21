@@ -38,6 +38,8 @@ author: Gin
 email: jogincoco@gmail.com
 avatar: assets/images/grand_mini.jpg
 
+plugins:
+  - jekyll-toc
 # You'll want to customize url and baseurl for your own site:
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://ginchow.github.io/" # the base hostname & protocol for your site
@@ -45,6 +47,7 @@ markdown: kramdown
 kramdown:
   input: GFM
   syntax_highlighter: rouge
+  parse_block_html: true
 highlighter: rouge
 # Social settings
 facebook_url:
