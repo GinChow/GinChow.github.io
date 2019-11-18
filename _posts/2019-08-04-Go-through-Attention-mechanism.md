@@ -18,6 +18,8 @@ categories: [Deep Learning,Tech]
 
 其基本结构是在原encoder-decoder-model的基础上, 增加了动态数量的encoder-embedding，让模型的表达能力更强了
 
+<!--more-->
+
 > In the Encoder–Decoder framework, an encoder reads the input sentence, a sequence of vectors x=(x1,···,xTx),in to avectorc.2 The most commonapproach is to use an RNN such that 
 > <br>$$h_{t} = f(x_{t}, h_{t-1})$$
 > <br>$$ c = q({h_{1}, ..., h_{T_{x}}}) $$
